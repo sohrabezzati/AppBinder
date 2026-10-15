@@ -9,11 +9,14 @@
     <strong>Kernel-Level Network Routing, Live Per-App Bandwidth Speeds, Dual Token-Bucket Throttling, Quotas, Zero-Leak Firewall Kill-Switch & 24/7 Autonomous Background Operation</strong>
   </p>
   <p align="center">
+    <a href="https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder-AppleSilicon.dmg">
+      <img src="https://img.shields.io/badge/Download-Apple%20Silicon%20(M1--M4)-007AFF?style=for-the-badge&logo=apple" alt="Download Apple Silicon" />
+    </a>
     <a href="https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg">
-      <img src="https://img.shields.io/badge/Download-AppBinder.dmg-007AFF?style=for-the-badge&logo=apple" alt="Download AppBinder.dmg" />
+      <img src="https://img.shields.io/badge/Download-Universal%20(M%20Series%20%2B%20Intel)-34C759?style=for-the-badge&logo=apple" alt="Download Universal" />
     </a>
     <a href="https://github.com/sohrabezzati/AppBinder/releases/tag/v1.3.0">
-      <img src="https://img.shields.io/badge/Release-v1.3.0%20(Build%2011)-34C759?style=for-the-badge" alt="Version 1.3.0" />
+      <img src="https://img.shields.io/badge/Release-v1.3.0%20(Build%2011)-5856D6?style=for-the-badge" alt="Version 1.3.0" />
     </a>
     <a href="https://github.com/sohrabezzati/AppBinder/releases/download/v1.3.0/demo.mp4">
       <img src="https://img.shields.io/badge/Video-HD%20Walkthrough-FF9500?style=for-the-badge&logo=youtube" alt="Watch HD Video Walkthrough" />
@@ -111,7 +114,8 @@ Route latency-sensitive applications (such as Xcode iOS Simulators, Google Chrom
 ## 🚀 Installation & Setup
 
 ### 1. Download
-👉 **[Download AppBinder.dmg (v1.3.0 Build 11)](https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg)**
+- 🍏 **[Download AppBinder-AppleSilicon.dmg](https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder-AppleSilicon.dmg)** *(Recommended for Apple Silicon M1 / M2 / M3 / M4 Macs)*
+- 🌐 **[Download AppBinder.dmg](https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg)** *(Universal for Apple Silicon & Intel)*
 
 ### 2. Move to `/Applications`
 Open `AppBinder.dmg` and drag **AppBinder** into your **Applications** folder.
