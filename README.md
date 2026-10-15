@@ -1,120 +1,157 @@
 <p align="center">
-  <img src="AppIcon.png" width="128" height="128" alt="AppBinder Icon" />
+  <img src="banner.png" alt="AppBinder Hero Showcase" width="100%" />
+</p>
+
+<p align="center">
+  <img src="AppIcon.png" width="100" height="100" alt="AppBinder App Icon" />
   <h1 align="center">AppBinder for macOS</h1>
   <p align="center">
-    <strong>Live Per-App Bandwidth Speeds, Cumulative Data Usage Meters, 24/7 Autonomous Background Routing, Firewall Kill-Switch, Independent Download/Upload Throttling, Quotas & Xcode iOS Simulator Binding</strong>
+    <strong>Kernel-Level Network Routing, Live Per-App Bandwidth Speeds, Dual Token-Bucket Throttling, Quotas, Zero-Leak Firewall Kill-Switch & 24/7 Autonomous Background Operation</strong>
   </p>
   <p align="center">
     <a href="https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg">
       <img src="https://img.shields.io/badge/Download-AppBinder.dmg-007AFF?style=for-the-badge&logo=apple" alt="Download AppBinder.dmg" />
     </a>
-    <img src="https://img.shields.io/badge/Version-1.3.0-blue?style=for-the-badge" alt="Version 1.3.0" />
-    <img src="https://img.shields.io/badge/Platform-macOS%2014%2B%20%7C%2015%2B-lightgrey?style=for-the-badge&logo=apple" alt="macOS 14+ / 15+" />
+    <a href="https://github.com/sohrabezzati/AppBinder/releases/tag/v1.3.0">
+      <img src="https://img.shields.io/badge/Release-v1.3.0%20(Build%2011)-34C759?style=for-the-badge" alt="Version 1.3.0" />
+    </a>
+    <a href="https://github.com/sohrabezzati/AppBinder/releases/download/v1.3.0/demo.mp4">
+      <img src="https://img.shields.io/badge/Video-HD%20Walkthrough-FF9500?style=for-the-badge&logo=youtube" alt="Watch HD Video Walkthrough" />
+    </a>
+    <img src="https://img.shields.io/badge/macOS-14%20Sonoma%20%7C%2015%20Sequoia-grey?style=for-the-badge&logo=apple" alt="macOS 14+ / 15+" />
   </p>
+</p>
+
+---
+
+## 🎬 Live Interactive Walkthrough
+
+<p align="center">
+  <img src="demo.gif" alt="AppBinder Interactive Demo Walkthrough" width="100%" />
+</p>
+<p align="center">
+  <em>AppBinder in action: Real-time traffic monitoring, per-app network binding, rate throttling, and zero-leak firewall kill-switch.</em><br />
+  👉 <strong><a href="https://github.com/sohrabezzati/AppBinder/releases/download/v1.3.0/demo.mp4">Download or watch high-definition 60fps MP4 walkthrough video</a></strong>
 </p>
 
 ---
 
 ## 🌟 Overview
 
-**AppBinder** is a professional macOS utility giving you total control over application network routing, firewall permissions, bandwidth speed limits, data consumption quotas, developer simulator binding, and live bandwidth monitoring.
+**AppBinder** gives you uncompromising, kernel-level dominion over your Mac's network traffic. 
 
-Force latency-sensitive apps (like Chrome, Terminal, Ghostty, or Xcode iOS Simulator) to bind strictly to physical **Ethernet (`en0`)** or specific interfaces to bypass VPN tunnels, completely isolate apps with a **zero-leak Firewall Kill-Switch**, set independent **Download and Upload Speed Caps**, monitor **Live Speeds (`⬇` / `⬆`)** across all applications, and enforce policies **24/7 in the background** — all at the Apple Network Extension kernel level with zero latency.
+Route latency-sensitive applications (such as Xcode iOS Simulators, Google Chrome, Terminal, or Ghostty) directly through your physical **Gigabit Ethernet (`en0`)** to bypass VPN tunnels, completely isolate untrusted processes with a **Zero-Leak Firewall Kill-Switch**, set independent **Download and Upload Speed Caps**, monitor **Live Speeds (`⬇` / `⬆`)** across all applications, and enforce your policies **24/7 in the background** — powered directly by Apple's Network Extension kernel framework with zero overhead.
 
 ---
 
-## ⚡ What's New in v1.3.0
+## ⚡ What's New in v1.3.0 (Build 11)
+
+<p align="center">
+  <img src="monitoring.png" alt="System-Wide Monitoring & Instant Firewall Control" width="92%" />
+</p>
 
 ### 1. ⚡ Live Download & Upload Speeds & Per-App Data Usage
-- Real-time 1-second interval bandwidth meters display instantaneous transfer rates: `🟢 ⬇ 2.4 MB/s  ⬆ 120 KB/s`.
-- Direct per-application byte tracking displays total consumed data along with independent **Download** and **Upload** breakdowns.
-- Real-time live status pill directly on every policy card in **Binding Rules** and in a dedicated live activity strip in **Live Telemetry**.
+- **Real-Time Transfer Rates**: Instantaneous 1-second interval bandwidth meters display live speeds (e.g. `🟢 ⬇ 3.5 MB/s  ⬆ 240 KB/s`).
+- **Cumulative Byte Meters**: Granular per-application accounting tracking total transferred data alongside dedicated Download and Upload breakdowns.
+- **Active Traffic Indicators**: Real-time activity badges on every policy card in **Binding Rules** and in a live monitoring strip in **Live Telemetry**.
 
-### 2. 🌐 System-Wide Bandwidth & Quotas for ALL Installed Apps (Even Unconfigured)
-- The **Installed Applications** catalog now continuously tracks and displays live transfer speeds and data consumption for **every installed app on macOS**, even before any rule is configured.
-- Shows real-time bandwidth indicators, total transferred bytes, and active quota caps.
-- Instant 1-click **Block / Unblock** firewall toggle and **Configure Policy** buttons right from the Installed Apps list.
-- Quick filter control: switch seamlessly between **All Apps**, **Active Traffic** (apps actively transferring data), **Configured**, and **Unconfigured**.
+### 2. 🌐 System-Wide Telemetry for ALL Installed Apps (Even Unconfigured)
+- **Continuous App Discovery**: The **Installed Applications** catalog continuously discovers and displays live transfer speeds and data consumption for **every installed application on macOS**, even before any rule is configured.
+- **Active Quota Badges**: Instant visibility into active limits (`Cap: 500M Dl • 100M Ul`, `No Cap (Unlimited)`, or `Default Route`).
+- **One-Click Firewall Toggle**: Instantly **Block / Unblock** network access with a single click directly from the application catalog.
+- **Segmented Filter Controls**: Seamlessly toggle between **All Apps**, **Active Traffic** (apps actively streaming data), **Configured**, and **Unconfigured**.
 
-### 3. 🌙 24/7 Autonomous Background Execution (Works When App Is Closed)
-- Low-level network interception, per-app interface binding, rate-limiting, and firewall kill-switches run inside the privileged root System Extension daemon (`ProxyExtension`).
-- Runs continuously 24/7 managed by macOS `sysextd` and `launchd` without requiring the `AppBinder.app` user interface to stay open.
-- Rules and cumulative counters are automatically mirrored to `/Users/Shared/AppBinder/rules.json`, allowing the daemon to load and enforce policies autonomously on system boot.
+<p align="center">
+  <img src="throttling.png" alt="Granular Per-App Throttling & Independent Data Caps" width="92%" />
+</p>
 
-### 4. 🚀 Launch Automatically on macOS Login
-- Native login item management powered by Apple’s modern `SMAppService.mainApp` API (macOS 13+ / 14 Sonoma / 15 Sequoia).
+### 3. 🎛️ Dual Token-Bucket Rate Limiting & Independent Data Caps
+- **Independent Download & Upload Throttling**: Rate-limit downstream and upstream traffic separately (e.g., 2 MB/s download / 256 KB/s upload).
+- **Smooth TCP Window Backpressure**: Limits speed smoothly without dropping packets or causing jitter.
+- **Dual Live Progress Quotas**: Independent download and upload quotas with color-coded safety thresholds:
+  - 🔵 **Normal** (<80% of limit)
+  - 🟠 **Warning** (80%–99% of limit)
+  - 🔴 **Quota Exceeded** (100% — traffic paused automatically at the kernel level)
+
+<p align="center">
+  <img src="killswitch.png" alt="24/7 Kernel Enforcement & Zero-Leak Kill-Switch" width="92%" />
+</p>
+
+### 4. 🌙 24/7 Autonomous Background Daemon (Works When App Is Closed)
+- **Persistent Root System Extension**: Network interception, interface binding, rate throttling, and firewall kill-switches run continuously inside the privileged root System Extension (`com.sohrab.AppBinder.ProxyExtension`).
+- **Managed by `sysextd` and `launchd`**: Runs 24/7 in the background without needing the `AppBinder.app` user interface to remain open.
+- **Autonomous Disk Mirroring**: All active policies and byte counters are mirrored to `/Users/Shared/AppBinder/rules.json`, allowing the daemon to resume and enforce rules immediately upon system boot.
+
+### 5. 🚀 Launch Automatically on macOS Login
+- Native login item management powered by Apple’s modern `SMAppService.mainApp` API (macOS 14 Sonoma / 15 Sequoia).
 - Toggleable directly from **Settings → Startup & Background Operation**.
-- Ensures seamless background notifications and live graph streaming upon login with zero manual intervention.
+- Guarantees silent background operation and instant rule enforcement upon system login.
 
-### 5. 📱 Reliable Xcode iOS Simulator Live Speeds & Quotas
-- Direct attribution across all CoreSimulator, `launchd_sim`, and runtime helper processes (`configd_sim`, `simdeviceio`, `CoreSimulatorBridge`, `com.apple.WebKit.WebContent`).
-- Full support for live speed gauges (`⬇` / `⬆`), rate limiting, and quota enforcement across iOS Simulator network traffic.
+### 6. 📱 Xcode iOS Simulator Network Binding & Live Speeds
+- Full process attribution across CoreSimulator, `launchd_sim`, and helper runtimes (`configd_sim`, `simdeviceio`, `CoreSimulatorBridge`, `com.apple.WebKit.WebContent`).
+- Bind iOS Simulators to physical Ethernet (`en0`) while your macOS host uses Wi-Fi or VPN, complete with live speed gauges and quota enforcement.
 
 ---
 
 ## 🛡️ Core Capabilities
 
-### 🔹 Granular Network Interface Binding
-- Bind applications strictly to physical hardware interfaces (Ethernet `en0`, Wi-Fi `en1`) or VPN tunnels (`utun`).
-- Process hierarchy tracking: Terminal sessions (`zsh`, `bash`) and CLI subprocesses (`curl`, `git`, `ssh`, `python`) automatically inherit their parent terminal emulator's routing rule.
-
-### 🔹 Per-App Firewall & Internet Kill-Switch
-- Instantly block any macOS app or CLI tool from accessing the internet.
-- Zero-leak kernel enforcement immediately refuses outbound TCP and UDP connections (`ECONNREFUSED`).
-- One-click **Block / Unblock** toggle directly on each application card.
-
-### 🔹 Independent Download & Upload Bandwidth Throttling
-- Rate-limit download and upload speeds separately per application (e.g. 1 MB/s download / 256 KB/s upload).
-- Dual **Token Bucket Limiters** using TCP window backpressure smooth traffic without dropping packets.
-
-### 🔹 Independent Download & Upload Data Quotas
-- Set independent data caps for download and upload traffic (e.g., 5 GB download / 500 MB upload).
-- Dual live progress bars with dynamic color alerts:
-  - 🔵 Normal (<80%)
-  - 🟠 Warning (80%–99%)
-  - 🔴 Quota Exceeded (100% — traffic paused automatically)
-- One-click meter reset button to clear counters at any time.
-
-### 🔹 Modern Configuration Canvas
-- Clean chip preset grids (`Unlimited`, `256 KB/s`, `512 KB/s`, `1 MB/s`, `2 MB/s`, `5 MB/s`, `Custom...`) for both download and upload.
-- Dedicated custom pickers with unit selection (`KB/s`, `MB/s`, `MB`, `GB`) and live Mbps conversion.
-
-### 🔹 Dedicated Settings & Rules Backup
-- Export all rules to formatted JSON, import from backup, and batch reset meters.
-- Auto-sync guarantees policies are instantly applied upon app launch and tunnel reconnects.
+| Feature | Description |
+| :--- | :--- |
+| **Interface Binding** | Force apps to bind strictly to physical interfaces (`en0`, `en1`, etc.) or VPN tunnels (`utun`). |
+| **Firewall Kill-Switch** | 100% zero-leak kernel firewall immediately refusing unauthorized connections (`ECONNREFUSED`). |
+| **Dual Rate Limiting** | Independent Download and Upload token-bucket limiters with smooth TCP window backpressure. |
+| **Dual Data Caps** | Independent Download and Upload data consumption quotas with live warning meters. |
+| **Process Tree Tracking** | CLI processes spawned in Terminal, iTerm2, or Ghostty automatically inherit their parent app's rule. |
+| **Live Telemetry** | System-wide per-app live transfer rate tracking (`⬇` / `⬆`) and cumulative usage metrics. |
+| **24/7 Root Daemon** | Privileged System Extension continues enforcing rules even when the GUI window is closed. |
+| **Launch at Login** | Native macOS `SMAppService` startup integration with zero menu-bar clutter. |
 
 ---
 
 ## 🚀 Installation & Setup
 
 ### 1. Download
-👉 **[Download AppBinder.dmg](https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg)**
+👉 **[Download AppBinder.dmg (v1.3.0 Build 11)](https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg)**
 
 ### 2. Move to `/Applications`
 Open `AppBinder.dmg` and drag **AppBinder** into your **Applications** folder.
 
-> **Note:** macOS kernel security requires System Extensions to reside within `/Applications` to activate.
+> [!IMPORTANT]
+> macOS kernel security mandates that System Extensions reside within the root `/Applications` folder to be authorized by `sysextd`.
 
 ### 3. First Launch & Security Approval
 Because AppBinder is distributed outside the Mac App Store:
-- **First Open**: Right-click (Control-click) `AppBinder.app` in `/Applications` and select **Open**, then click **Open**.
-  *(Alternatively, run `xattr -cr /Applications/AppBinder.app` in Terminal).*
-- **Approve Extension**: When prompted by macOS, allow the Network Extension in:
-  **System Settings → General → Login Items & Extensions → Network Extensions → Enable AppBinder**.
+1. **First Open**: Right-click (Control-click) `AppBinder.app` in `/Applications` and select **Open**, then confirm **Open**.
+   *(Alternatively, run `xattr -cr /Applications/AppBinder.app` in Terminal).*
+2. **Approve Extension**: When prompted by macOS, allow the Network Extension in:
+   **System Settings → General → Login Items & Extensions → Network Extensions → Enable AppBinder**.
 
 ---
 
 ## 🛠 Quick Usage
 
-1. Launch **AppBinder** and verify the status indicator in the sidebar shows **Proxy Active**.
-2. Go to **Binding Rules** → click **Add Rule** (or open **Installed Apps** to browse discovered applications).
-3. Select your application:
-   - **Mode: Route via Interface**: Select your network interface (e.g., Ethernet `en0`), and optionally configure independent download/upload speed limits or data quotas.
-   - **Mode: Block Internet (Kill-Switch)**: Completely isolate the application from the network.
-4. Click **Save Policy Rule** — all policies apply instantly in real time!
+1. **Launch AppBinder**: Verify the sidebar indicator shows `● Proxy Active`.
+2. **Add a Policy Rule**:
+   - Navigate to **Binding Rules** → click **Add Rule** (or browse **Installed Applications**).
+   - Select your target application (e.g., Xcode Simulator, Chrome, or Terminal).
+3. **Select Mode**:
+   - **Route via Interface**: Select your network interface (e.g. Ethernet `en0`), and optionally configure Download/Upload speed limits and data quotas.
+   - **Block Internet (Kill-Switch)**: Completely isolate the application with zero network leakage.
+4. **Save Policy Rule**: Changes take effect immediately at the kernel level in real time!
+
+---
+
+## 🏗️ Architecture & Security
+
+AppBinder is built on a modern, multi-tier privilege-separated architecture:
+
+- **AppBinder.app (GUI)**: Sandboxed SwiftUI application providing real-time telemetry streaming, interactive configuration canvases, and login item management.
+- **ProxyExtension (Root Daemon)**: Highly optimized Apple `NEAppProxyProvider` running as a root System Extension daemon managed by `sysextd`. Intercepts TCP and UDP network flows, enforces token-bucket rate limits, monitors bytes, and directs packets to bound interfaces.
+- **UNIX Domain Socket IPC**: Low-latency bidirectional IPC over `/var/run/com.sohrab.AppBinder.sock` transmitting policy rules, live speed streams, and quota status with millisecond responsiveness.
+- **Disk State Mirroring**: `/Users/Shared/AppBinder/rules.json` guarantees policy persistence across app relaunches, extension upgrades, and system reboots.
 
 ---
 
 ## 📄 Distribution
 
-AppBinder is distributed as precompiled release binaries. All rights reserved.
+AppBinder is distributed as precompiled, signed binary releases for macOS. All rights reserved.
