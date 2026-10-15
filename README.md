@@ -2,12 +2,14 @@
   <img src="AppIcon.png" width="128" height="128" alt="AppBinder Icon" />
   <h1 align="center">AppBinder for macOS</h1>
   <p align="center">
-    <strong>Granular Per-App Network Interface & VPN Tunnel Binding for macOS</strong>
+    <strong>Granular Per-App Network Interface Routing, Firewall Kill-Switch, Bandwidth Throttling & Data Quota Control for macOS</strong>
   </p>
   <p align="center">
     <a href="https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg">
       <img src="https://img.shields.io/badge/Download-AppBinder.dmg-007AFF?style=for-the-badge&logo=apple" alt="Download AppBinder.dmg" />
     </a>
+    <img src="https://img.shields.io/badge/Version-1.1.0-blue?style=for-the-badge" alt="Version 1.1.0" />
+    <img src="https://img.shields.io/badge/Platform-macOS%2014%2B%20%7C%2015%2B-lightgrey?style=for-the-badge&logo=apple" alt="macOS 14+ / 15+" />
   </p>
 </p>
 
@@ -15,50 +17,72 @@
 
 ## 🌟 Overview
 
-**AppBinder** gives you granular, per-application control over your macOS network routing. Route specific apps (such as Google Chrome, Terminal, Ghostty, or custom binaries) directly through physical interfaces like **Ethernet (`en0`)** or **Wi-Fi (`en1`)**, completely bypassing system-wide VPN tunnels (`utun`), or vice-versa.
+**AppBinder** gives you complete, granular control over every application's network access on macOS. 
 
-### ✨ Key Features
-
-- **Per-Application Binding**: Map any macOS app or terminal emulator directly to a designated hardware interface or VPN tunnel.
-- **VPN Bypass**: Force latency-critical apps (browsers, terminals, dev tools) to route over physical Ethernet even when a full-tunnel VPN is active.
-- **Process Hierarchy Tracking**: Terminal sessions (`zsh`, `bash`) and CLI subprocesses (`curl`, `git`, `ssh`, `python`) automatically inherit their parent terminal emulator's routing rule.
-- **Subprocess & Helper Support**: Seamlessly routes multi-process architectures (e.g., Google Chrome Helper, Electron renderers).
-- **Apple Network System Extension**: Built using Apple's modern NetworkExtension framework (`NETransparentProxyProvider`) with kernel-level performance and 0ms connection latency.
-- **Live Flow Telemetry**: Real-time dashboard showing every active flow, destination host, and routed interface.
+Whether you want to force specific apps (like Chrome, Terminal, or Ghostty) to bind strictly to physical **Ethernet (`en0`)** to bypass VPN tunnels, completely isolate apps with a **zero-leak Firewall Kill-Switch**, throttle download bandwidth, or enforce monthly **Data Quotas**, AppBinder handles it all at the kernel level with zero latency.
 
 ---
 
-## 🚀 Installation & Getting Started
+## ⚡ Supercharged Capabilities (v1.1.0)
+
+### 1. 🛡️ Per-App Firewall & Internet Kill-Switch
+- Instantly block any macOS app or CLI tool from accessing the internet.
+- Zero-leak kernel enforcement immediately refuses outbound TCP and UDP connections (`ECONNREFUSED`).
+- One-click **Block / Unblock** button right on each application card.
+
+### 2. ⚡ Per-App Bandwidth Speed Throttling
+- Rate-limit download speeds per application: `256 KB/s`, `512 KB/s`, `1 MB/s`, `2 MB/s`, `5 MB/s`, or `Unlimited`.
+- Implemented with a high-performance **Token Bucket Algorithm** with TCP window backpressure, smoothing bandwidth without dropping packets.
+
+### 3. 📊 Per-App Data Cap & Live Usage Metering
+- Set data transfer quotas: `100 MB`, `500 MB`, `1 GB`, `2 GB`, `5 GB`, or `Unlimited`.
+- Live visual progress bar with dynamic color indicators:
+  - 🔵 Normal (<80%)
+  - 🟠 Warning (80%–99%)
+  - 🔴 Quota Exceeded (100% — traffic paused automatically)
+- One-click quota reset button (`arrow.clockwise`) to clear usage meters at any time.
+
+### 4. 🌐 Per-App Network Interface & VPN Tunnel Binding
+- Bind applications strictly to physical hardware interfaces (Ethernet `en0`, Wi-Fi `en1`) or VPN tunnels (`utun`).
+- Force latency-critical apps to route over physical Ethernet even when a full-tunnel corporate VPN is active.
+- Process hierarchy tracking: Terminal sessions (`zsh`, `bash`) and CLI subprocesses (`curl`, `git`, `ssh`, `python`) automatically inherit their parent terminal emulator's routing rule.
+
+### 5. 🎨 World-Class macOS UI & Live Telemetry
+- Card-based policy management with real-time status badges and instant controls.
+- Live telemetry stream capturing all intercepted flows with search, filtering (All, Routed, Blocked), and real-time packet counters.
+
+---
+
+## 🚀 Installation & Setup
 
 ### 1. Download
-Download the latest disk image installer:
 👉 **[Download AppBinder.dmg](https://github.com/sohrabezzati/AppBinder/releases/latest/download/AppBinder.dmg)**
 
 ### 2. Move to `/Applications`
 Open `AppBinder.dmg` and drag **AppBinder** into your **Applications** folder.
 
-> **Note:** macOS kernel security requires System Extensions to reside within the `/Applications` folder to activate.
+> **Note:** macOS kernel security requires System Extensions to reside within `/Applications` to activate.
 
 ### 3. First Launch & Security Approval
 Because AppBinder is distributed outside the Mac App Store:
 - **First Open**: Right-click (Control-click) `AppBinder.app` in `/Applications` and select **Open**, then click **Open**.
-  *(Or run `xattr -cr /Applications/AppBinder.app` in Terminal).*
+  *(Alternatively, run `xattr -cr /Applications/AppBinder.app` in Terminal).*
 - **Approve Extension**: When prompted by macOS, allow the Network Extension in:
   **System Settings → General → Login Items & Extensions → Network Extensions → Enable AppBinder**.
 
 ---
 
-## 🛠 Usage
+## 🛠 Quick Usage
 
-1. Launch **AppBinder** and verify the status indicators in the sidebar are green (**Proxy Active**).
+1. Launch **AppBinder** and verify the status indicator in the sidebar shows **Proxy Active**.
 2. Go to **Binding Rules** → click **Add Rule**.
-3. Select your application (e.g. **Google Chrome**, **Terminal**, or **Ghostty**).
-4. Select the target network interface (e.g. **Ethernet (en0)**).
-5. Click **Save Binding Rule**.
-6. All traffic from that application will now route strictly through the designated interface!
+3. Pick your application:
+   - **Mode: Route via Interface**: Select your network interface (e.g., Ethernet `en0`), and optionally set a speed cap or data quota.
+   - **Mode: Block Internet (Kill-Switch)**: Completely isolate the application from the network.
+4. Click **Save Policy Rule** — all policies apply instantly in real time!
 
 ---
 
-## 📄 License & Distribution
+## 📄 Distribution
 
-AppBinder is distributed as precompiled binaries. All rights reserved.
+AppBinder is distributed as precompiled, notarized-ready release binaries. All rights reserved.
